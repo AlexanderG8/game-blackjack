@@ -47,7 +47,8 @@
       }
     }
     // Retornamos el deck mezclado
-    return _.shuffle(deck);;
+    deck = _.shuffle(deck);
+    return deck;
   };
   crearDeck();
   /**
