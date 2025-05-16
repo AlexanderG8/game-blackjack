@@ -1,0 +1,91 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #2F4F30;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.titulo{
+    text-align: center;
+    background-color: black;
+    color : white;
+    padding: 20px;
+    font-size: 25px;
+}
+
+/* Estilos base que complementan a Tailwind */
+.carta {
+    transition: all 0.3s ease;
+    width: 140px;
+    margin: 0 -15px;
+}
+
+.carta:hover {
+    transform: translateY(-10px) rotate(2deg);
+    z-index: 10;
+}
+
+/* Animación para las cartas nuevas */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#computadora-cartas img, #jugador-cartas img {
+    animation: cardAppear 0.5s ease forwards;
+}
+
+/* Efecto de neón para el título */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+}
+
+h1 i.fa-crown {
+    animation: neonPulse 2s infinite;
+}
+
+/* Estilos para el modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out, opacity 0.3s ease;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Efecto de brillo para los botones */
+.btn-3d:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Efecto de mesa de casino */
+.bg-gradient-to-br.from-emerald-900 {
+    background-image: radial-gradient(circle at center, rgba(6, 78, 59, 0.8), rgba(17, 24, 39, 0.95)), 
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ffffff10" stroke-width="0.5"/></svg>');
+}
+
+#computadora-cartas, #jugador-cartas{
+    height: 240px;
+}
